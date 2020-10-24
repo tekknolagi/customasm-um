@@ -1,3 +1,5 @@
+#bits 32
+
 #subruledef register {
     r{num} => num`3
 }
@@ -31,6 +33,6 @@
     {i:threereg_instruction} {a:register}, {b:register}, {c:register} => i`4 @ 0`19 @ a`3 @ b`3 @ c`3
     {i:tworeg_instruction} {b:register}, {c:register} => i`4 @ 0`22 @ b`3 @ c`3
     {i:onereg_instruction} {c:register} => i`4 @ 0`25 @ c`3
-    {i:noreg_instruction} {c:register} => i`4 @ 0`28
+    {i:noreg_instruction} => i`4 @ 0`28
     loadi {a:register}, {val:u25} => 13`4 @ a`3 @ val
 }
